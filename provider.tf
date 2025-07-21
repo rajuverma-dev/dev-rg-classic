@@ -5,14 +5,6 @@ terraform {
       version = "4.36.0"
     }
   }
-  backend "azurerm" {
-  resourec_group_name = "rg-veer"
-  storage_account_name = "veerstorage"
-  container_name = "veercontainer"
-  key           = "classic.tfstate"
-}
-
-}
 
 provider "azurerm" {
   features {}
