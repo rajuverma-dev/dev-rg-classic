@@ -5,6 +5,11 @@ terraform {
       version = "4.36.0"
     }
   }
+ backend "azurerm" {
+    storage_account_name = "veerbackendstorage"
+    container_name = "veercontainer"
+    key = "veerkey-state.tf"
+  }
 }
 
 provider "azurerm" {
