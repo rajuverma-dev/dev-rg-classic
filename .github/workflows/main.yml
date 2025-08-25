@@ -1,0 +1,6 @@
+name: Yaml for git to Deploy
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
