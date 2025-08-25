@@ -5,13 +5,17 @@ on:
       - main
       - 'feature/**'
 jobs:
-  job:
+  job1:
     runs-on: self-hosted
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Terraform init
         run: terraform init
+        working-directory: ${{ github.workspace }}
+  job2:
+    runs-on: self-hosted
+    steps:
+      - name: Terraform Plan
+        run: terraform plan
         working-directory: ${{ github.workspace }}
 
 
