@@ -1,0 +1,12 @@
+name: Yaml for git to Deploy
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+jobs:
+  test_schedule:
+    runs-on: self-hosted
+    steps:
+      - name: Terraform init
+        run: terraform init
