@@ -8,8 +8,10 @@ jobs:
   job:
     runs-on: self-hosted
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Terraform init
         run: terraform init
-        working-directory: /Users/rjv/actions-runner/_work/dev-rg-classic/dev-rg-classic
+        working-directory: ${{ github.workspace }}
 
 
