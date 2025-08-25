@@ -2,17 +2,18 @@ terraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = "4.36.0"
+      version = ">=4.36.0"
     }
   }
  backend "azurerm" {
-    storage_account_name = "veerbackendstorage"
+    resource_group_name = "Veer-RG"
+    storage_account_name = "storageveerbackend"
     container_name = "veercontainer"
-    key = "veerkey-state.tf"
+    key = "github-key-state.tf"
   }
 }
 
 provider "azurerm" {
   features {}
-  subscription_id = "661ea49e-05d4-429e-8204-de0d46c539b5"
+  subscription_id = "317171c4-8a0b-428f-b95a-d30f5ecb1162"
 }
